@@ -1,0 +1,196 @@
+
+<style>
+.empty_cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    flex-direction: column;
+}
+.empty_cart h1{
+    color: black;
+    font-size: 20px;
+    margin: 20px 0px;
+}
+.empty_cart button{
+    background-color: red;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
+
+<header>
+  <nav>
+    <form method="get" class="search_bar">
+      <input type="text" name="sunny" id="" placeholder="Search..." />
+      <button type="submit" class="src_btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+    <div class="logo">
+      <a href="/"><p>adalene.</p></a>
+    </div>
+    <div class="right_side_con">
+      <div class="icons">
+        <i class="fa-brands fa-facebook-f icon"></i>
+        <i class="fa-brands fa-instagram icon"></i>
+        <i class="fa-brands fa-twitter icon"></i>
+        <i class="fa-brands fa-pinterest-p icon"></i>
+      </div>
+      {% if user.id is None %}
+      <div class="ls">
+        <a href="/registration"><i class="fa-solid fa-circle-user icon"></i></a>
+        <a href="/login">| Log in</a>
+      </div>
+      {% else %}
+      <div class="ls">
+        <a href="">{{user.first_name}} |</a>
+        <a href="/logout">Logout</a>
+      </div>
+      {% endif %}
+
+      <div class="cart" onclick="cart()">
+        <a>Cart</a>
+        <span>({{count_item}})</span>
+      </div>
+
+      <div class="toggle" onclick="f1()">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div class="down_header hide" id="ul">
+    <ul>
+      <li><a href="/store">Shop All</a></li>
+      <li><a href="/ourstory">Our Story</a></li>
+      <li><a href="/ourcraft">Our Carft</a></li>
+      <li><a href="/giftcard_item">Gift Card</a></li>
+      <!-- <li><a href="">Contact</a></li> -->
+    </ul>
+    <div class="mobile_s_icon">
+      <i class="fa-brands fa-facebook-f icon"></i>
+      <i class="fa-brands fa-instagram icon"></i>
+      <i class="fa-brands fa-twitter icon"></i>
+      <i class="fa-brands fa-pinterest-p icon"></i>
+    </div>
+    <div class="cross" onclick="f2()">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  </div>
+</header>
+
+<!-- ################################### CART -->
+
+
+
+<div class="translate_cart cart_hide" id="cart">
+  <div class="cart_header" style="z-index: 20;">
+    <i
+      class="fa-solid fa-chevron-right cart_arrow cart_show"
+      id="cart_hide"
+      onclick="cart1()"
+    ></i>
+    <h1>cart</h1>
+    <div></div>
+  </div>
+  
+  {% if cd %}
+
+  {% for i in cd %}
+
+  <div class="cart_data">
+    <div class="products">
+      <div class="img">
+        <img
+          src="{{i.pc.images.url}}"
+          alt=""
+        />
+      </div>
+      <div class="details">
+        <p>{{i.pc.product_name}}</p>
+        <p>$ {{i.pc.price}}</p>
+        <p>${{i.get_total}}</p>
+        <p></p>
+        {% if i.v.all %}
+           {% for x in i.v.all %}
+             <p>{{x.VC}} : {{x.VV}}</p>
+             <!-- <p>Size : XL</p> -->
+            {% endfor %}
+        {% endif %}
+           <div class="qut_btn">
+             <a href="/minus_btn/{{i.id}}" class="left">-</a>
+             <a href="">{{i.q}}</a>
+            <a href="/plus_btn/{{i.id}}" class="right">+</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="/remove_product/{{i.id}}" class="deletecart"><i class="fa-solid fa-xmark"></i></a>
+  </div>
+
+  
+  
+  {% endfor %}
+
+  
+  <div class="subtotal">
+    <p>Subtotal ${{total}}</p>
+    <p>Tax : {{tax}}</p>
+    <p>Grand Total :{{grand_total}}</p>
+    <a href="">View Cart</a>
+  </div>
+
+{% else %}
+<div class="empty_cart">
+<h1 >Your Shopping Cart is Empty</h1>
+<a href="/store"><button>Continue Shopping</button></a>
+</div>
+{% endif %}
+
+</div>
+
+
+
+<!-- ################################### -->
+
+<script>
+  function f1() {
+    var x = document.getElementById("ul");
+    if (x.classList.contains("hide")) {
+      x.classList.add("show");
+      x.classList.remove("hide");
+    }
+  }
+  function f2() {
+    var y = document.getElementById("ul");
+    if (y.classList.contains("show")) {
+      y.classList.add("hide");
+      y.classList.remove("show");
+    }
+  }
+
+  function cart() {
+    var kk = document.getElementById("cart");
+    var ss = document.getElementById("cart_hide");
+
+    if (kk.classList.contains("cart_hide")) {
+      kk.classList.remove("cart_hide");
+      kk.classList.add("cart_show");
+    }
+  }
+
+  function cart1() {
+    var kk = document.getElementById("cart");
+    var ss = document.getElementById("cart_hide");
+    if (kk.classList.contains("cart_show")) {
+      kk.classList.remove("cart_show");
+      kk.classList.add("cart_hide");
+    }
+  }
+
+
+  
+</script>

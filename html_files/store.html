@@ -1,0 +1,130 @@
+{% extends './base.html' %}
+
+{% block 'css_files' %} 
+<link rel="stylesheet" href="/css_js_files/store.css">
+{% endblock %}
+
+{% block 'content' %}
+{% include './massage.html' %}
+<div class="store_con">
+    <div class="store_ch">
+    <a href="/">Home <i class="fa-solid fa-chevron-right"></i> </a>
+    {% if x %}
+    <a href="">{{x}}</a>
+    {% else %}
+    <a href="">All products</a>
+    {% endif %}
+    </div>
+
+    <div class="cat" onclick="v()">View all Category</div>
+
+    <form class="filter_p" method="post" action="/filter_price/">
+    {% csrf_token %}
+        <input type="number" name="minprice" id="min_p" placeholder="Min Price">
+        to
+        <input type="number" name="maxprice" id="max_p" placeholder="Max Price">
+        <button type="submit">find</button>
+    </form>
+
+</div>
+<div class="store_con1">
+    <div class="sls h" id="sls" >
+     <p>Browse by</p>
+     <ul>
+        <i class="fa-regular fa-circle-xmark close_icon" onclick="v1()"></i>
+        <a href="/store"><li>All Products</li></a>
+
+        <!-- ## ye mai direct category table mai se data laya hu -->
+        <!-- {% for i in cat %}
+        <a href="">
+            <li>{{i.category_name}}</li>
+        </a>
+        {% endfor %} -->
+        
+        <!-- ## or ye mai context_pre_pro ke through data laya hu -->
+
+        {% for i in cn %}
+        <a href="/store/{{i.category_name}}">
+            <li>{{i.category_name}}</li>
+        </a>
+        {% endfor %}
+     </ul>
+    </div>
+    <div class="srs">
+    {% if pro %}
+     {% if x %}
+     <h1>{{x}}</h1>
+     {% else %}
+     <h1>All Products</h1>
+     {% endif %}
+     
+     <div class="srs_con">
+        {% for i in pro %}
+            <a href="/product_page/{{i.id}}" class="box">
+                <img src="{{i.images.url}}" alt="">
+            <p>{{i.product_name}}</p>
+            <p><b>$ {{i.price}}</b></p>
+            </a>
+        {% endfor %}
+     </div>
+     {% else %}
+     
+     <h1 style="padding:100px 0px;">Result Not Found</h1>
+     {% endif %}
+
+    </div>
+</div>
+
+<!-- ####### Paginator ####### -->
+
+{% if pro.has_other_pages %}
+<div class="paginator">
+    {% if pro.has_previous %}
+    <a href="?page={{pro.previous_page_number}}">Previous</a>
+    {% else %}
+    <a href="" class="disabled">Previous</a>
+    {% endif %}
+
+    {% for i in pro.paginator.page_range %}
+    {% if pro.number == i %}
+    <a href="/store/?page={{i}}" class="active">{{i}}</a>
+    {% else %}
+    <a href="/store/?page={{i}}">{{i}}</a>
+    {% endif %}
+    {% endfor %}
+    <!-- <a href="">3</a> -->
+    {% if pro.has_next %}
+    <a href="/store/?page={{pro.next_page_number}}">Next</a>
+    {% else %}
+    <a href="" class="disabled">Next</a>
+    {% endif %}
+</div>
+{% endif %}
+
+<!-- ############################### -->
+
+
+<script>
+    function v(){
+        var t=document.getElementById("sls")
+        if(t.classList.contains("h")){
+            t.classList.add("s")
+            t.classList.remove("h")
+        }
+    }
+    function v1(){
+        var t=document.getElementById("sls")
+        if(t.classList.contains("s")){
+            t.classList.add("h")
+            t.classList.remove("s")
+        }
+    }
+
+    var k1=document.getElementById("sls")
+    window.addEventListener('scroll',function(){
+        if(window.scrollY>1100){
+            k1.style.position='absolute'
+        }
+    })
+</script>
+{% endblock %}

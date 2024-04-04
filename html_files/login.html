@@ -1,0 +1,103 @@
+<style>
+    .form form input:focus{
+    border:3px solid red !important;
+    outline: none;
+}
+</style>
+
+{% extends './base.html' %}
+
+{% block 'css_files' %}
+<link rel="stylesheet" href="/css_js_files/login.css">
+{% endblock %}
+
+{% block 'content' %}
+
+<div class="form hide01" id="form">
+    <form action="" method="post" onsubmit="return s1()">
+    {% csrf_token %}
+    {% include './massage.html' %}
+    <h2>Sign in</h2>
+    <input type="text" name="username"  id="username" placeholder="Username">
+    <p id="username_error"></p>
+    <div class="password">
+    <input type="password" name="password" placeholder="Password" id="password">
+    <i class="fa-solid fa-eye showeye hide1" onclick="h1()" id="hide"></i>
+    <i class="fa-solid fa-eye-slash hideeye show1" onclick="h2()" id="show"></i>
+    </div>
+    <p id="password_error"></p>
+    <a href="/forgot" class="for_pass" >Forgot password</a>
+    <a href="" class="btn"><button type="submit">Login</button></a>
+    </form>
+    <p class="p">Don't have account ? <a href="/registration" class="sign_up">Sign up</a></p>
+</div>
+
+
+
+<script>
+    function s1(){
+        var x=document.getElementById("username").value
+        var y=document.getElementById("password").value
+        var z=1
+        var v=1
+        if(x==""){
+            document.getElementById("username_error").innerText="Please enter usenname *"
+            z=0
+        }
+        else{
+            document.getElementById("username_error").innerText=""
+            z=1
+        }
+
+        if(y==""){
+            document.getElementById("password_error").innerText="Please enter password *"
+            v=0
+        }
+        else{
+            document.getElementById("password_error").innerText=""
+            v=1
+        }
+
+        if(z==1 && v==1){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+
+    function h2(){
+        var p1=document.getElementById("password")
+        var p2=document.getElementById("hide")
+        var p3=document.getElementById("show")
+        if(p3.classList.contains("show1")){
+            p3.classList.remove("show1")
+            p3.classList.add("hide1")
+            p2.classList.add("show1")
+            p2.classList.remove("hide1")
+        }
+        p1.type='text'
+    }
+    
+    function h1(){
+        var p1=document.getElementById("password")
+        var p2=document.getElementById("hide")
+        var p3=document.getElementById("show")
+        if(p3.classList.contains("hide1")){
+            p3.classList.remove("hide1")
+            p3.classList.add("show1")
+            p2.classList.remove("show1")
+            p2.classList.add("hide1")
+        }
+        p1.type="password"
+    }
+
+    
+
+</script>
+
+
+
+
+{% endblock %}
+

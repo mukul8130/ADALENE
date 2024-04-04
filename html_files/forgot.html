@@ -1,0 +1,19 @@
+{% extends './base.html' %}
+
+{% block 'css_files' %}
+<link rel="stylesheet" href="/css_js_files/forgot.css">
+{% endblock %}
+
+{% block 'content' %}
+<div class="forgot_form">
+    <form action="" method="post">
+        {% include './massage.html' %}
+        {% csrf_token %}
+        <label for="fp">Forgot Password</label>
+        <input type="email" name="for_pas" id="fp" placeholder="Email Address">
+        <a href="/login">Got Password ? Login</a>
+        <button type="submit">Submit</button>
+    </form>
+    <p>Don't have account ? <a href="/registration">Sign up</a></p>
+</div>
+{% endblock %}

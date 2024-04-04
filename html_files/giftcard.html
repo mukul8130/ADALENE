@@ -1,0 +1,95 @@
+{% extends './base.html' %}
+
+{% block 'css_files' %}
+<link rel="stylesheet" href="/css_js_files/giftcard.css">
+{% endblock %}
+
+{% block 'content' %}
+<div class="giftcard_c1">
+
+<div class="giftcard_l">
+   <div class="giftcard_img">
+
+   </div>
+</div>
+
+<div class="giftcard_r">
+    <h1>Gift Card</h1>
+    <p class="gp" id="gp">$ 25</p>
+    <p class="yougift">You can't go wrong with a gift card. Choose an amount andwrite a personalized message to make this gift your own.</p>
+    <p class="am">Amount</p>
+    <div class="gift_box">
+        <p onclick="pr1()" class="rate">$ 25</p>
+        <p onclick="pr2()" class="rate">$ 50</p>
+        <p onclick="pr3()" class="rate">$ 100</p>
+        <p onclick="pr4()" class="rate">$ 150</p>
+        <p onclick="pr5()" class="rate">$ 200</p>
+    </div>
+    <div class="gift_box1 gb">
+        <label>Who's the gift card for ?</label>
+        <div class="gift_box_card">
+            <p>For Someone else</p>
+            <p>For myself</p>
+        </div>  
+    </div>
+    <div class="gift_box2 gb">
+        <label for="ex">Recipient email *</label>
+        <br>
+        <input type="text" name="" id="ex">
+    </div>
+
+    <div class="gift_box2 gb">
+        <label for="ex1">Recipient name *</label>
+        <br>
+        <input type="text" name="" id="ex1">
+    </div>
+
+    <div class="gift_box2 gb">
+        <label for="ex2">Delivery date *</label>
+        <br>
+        <input type="date" name="" id="ex2" placeholder="Now">
+    </div>
+
+    <div class="gift_box2 gb">
+        <label for="ex3">Message</label>
+        <br>
+        <textarea name="" id="ex3" cols="54" rows="4"></textarea>
+    </div>
+
+    <a href=""><button>Buy Now</button></a>
+
+
+</div>
+
+</div>
+
+
+<script>
+    function pr1(){
+        var t=document.getElementsByClassName('rate')[0]
+        var t=document.getElementsByClassName('rate')[0].innerText
+        var z=document.getElementById("gp").innerText=t
+        
+    }
+    function pr2(){
+       
+       var t=document.getElementsByClassName('rate')[1].innerText
+       var z=document.getElementById("gp").innerText=t
+   }
+   function pr3(){
+       
+       var t=document.getElementsByClassName('rate')[2].innerText
+       var z=document.getElementById("gp").innerText=t
+   }
+   function pr4(){
+       
+       var t=document.getElementsByClassName('rate')[3].innerText
+       var z=document.getElementById("gp").innerText=t
+   }
+   function pr5(){
+       
+       var t=document.getElementsByClassName('rate')[4].innerText
+       var z=document.getElementById("gp").innerText=t
+   }
+</script>
+{% endblock %}

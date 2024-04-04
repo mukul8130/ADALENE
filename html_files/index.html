@@ -1,0 +1,341 @@
+<style>
+    /* <!-- ############# popup massage ######### --> */
+
+#popup{
+    position: absolute;
+    top:3%;
+    left:50%;
+    padding:10px 0px;
+    transform: translate(-50%,-50%);
+    font-weight: lighter;
+    font-size:25px;
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(rgba(255,0,0,0.5),rgba(255,0,0,0.5),rgba(255,0,0,0.5));
+    color: white;
+    display: none;
+}
+
+#popup p{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width:901px) {
+    #popup{
+        top: 4% !important;
+    }
+}
+@media screen and (max-width:751px) {
+    #popup{
+        top: 6%  !important;
+    }
+}
+@media screen and (max-width:501px) {
+    #popup{
+        top: 8% !important;
+    }
+}
+@media screen and (max-width:401px) {
+    #popup{
+        top: 10% !important;
+    }
+    #popup p{
+        font-size: 18px;
+    }
+    
+}
+@media screen and (max-width:301px) {
+    #popup{
+        top: 12% !important;
+    }
+} 
+/* <!-- ############# popup massage ######### --> */
+</style>
+
+{% extends './base.html' %}
+
+{% block 'css_files' %} <link rel="stylesheet" href="/css_js_files/index.css"> {% endblock %}
+
+{% block 'content' %}
+{% include './massage.html' %} 
+<div class="container">
+    <div class="img_con">
+        <img src="/css_js_files/static_images/ea71bb_cf7229cdefac4f9ca2c59692ef3f5984~mv2_d_1576_2117_s_2.webp" alt="">
+        <div class="con_data">
+            <h2>CUE THE COLOR</h2>
+            <a href="/store">Shop the collection</a>
+        </div>
+        <!--########## popup massage ########### -->
+        {% if user.id is none %}
+            <div id="popup">
+            <p>Login Please</p>
+            </div>
+        {% endif %}
+        <!-- ####### /popup massage ########## -->
+    </div>
+</div>
+
+<div class="container1">
+    <h6>BEST SELLERS</h6>
+</div>
+
+<div class="img_slider">
+    <div class="parent">
+        <div class="child" id="child">
+            {% for i in pro %}
+            <a href="/product_page/{{i.id}}" class="img">
+                <img src="{{i.images.url}}" alt="">
+                <p>{{i.product_name}}</p>
+                <p><b>$ {{i.price}}</b></p>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="next" onclick="next()"><i class="fa-solid fa-caret-right"></i></div>
+        <div class="prev" onclick="prev()"><i class="fa-solid fa-caret-left"></i></div>
+    </div>
+</div>
+
+
+<div class="img_slider img_slider1">
+    <div class="parent">
+        <div class="child child1" id="child">
+            {% for i in pro %}
+            <a href="/product_page/{{i.id}}" class="img1">
+                <img src="{{i.images.url}}" alt="">
+                <p>{{i.product_name}}</p>
+                <p><b>$ {{i.price}}</b></p>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="next" onclick="next1()"><i class="fa-solid fa-caret-right"></i></div>
+        <div class="prev" onclick="prev1()"><i class="fa-solid fa-caret-left"></i></div>
+    </div>
+</div>
+
+<div class="img_slider img_slider2">
+    <div class="parent">
+        <div class="child child2" id="child">
+            {% for i in pro %}
+            <a href="/product_page/{{i.id}}" class="img2">
+                <img src="{{i.images.url}}" alt="">
+                <p>{{i.product_name}}</p>
+                <p><b>$ {{i.price}}</b></p>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="next" onclick="next2()"><i class="fa-solid fa-caret-right"></i></div>
+        <div class="prev" onclick="prev2()"><i class="fa-solid fa-caret-left"></i></div>
+    </div>
+</div>
+
+<div class="img_slider img_slider3">
+    <div class="parent">
+        <div class="child child3" id="child">
+            {% for i in pro %}
+            <a href="/product_page/{{i.id}}" class="img3">
+                <img src="{{i.images.url}}" alt="">
+                <p>{{i.product_name}}</p>
+                <p><b>$ {{i.price}}</b></p>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="next" onclick="next3()"><i class="fa-solid fa-caret-right"></i></div>
+        <div class="prev" onclick="prev3()"><i class="fa-solid fa-caret-left"></i></div>
+    </div>
+</div>
+
+<div class="container2">
+    <a href="/store/bags">Shop All Bags</a>
+</div>
+
+<div class="container3">
+    <div class="left_side">
+       <div class="img">
+        <img src="/css_js_files/static_images/purs.webp" alt="">
+       </div>
+       <div class="details">
+        <p>Ketmart Purse</p>
+        <p><b>$ 299 </b></p>
+       </div>
+       <div class="btn">
+        <a href="">View Details</a>
+       </div>
+    </div>
+    <div class="right_side">
+        <div class="img">
+        <img src="/css_js_files/static_images/ea71bb_a05db5ea5f974ff9bec21dc40805ef6e~mv2_d_5358_3788_s_4_2.webp" alt="">
+        </div>
+        <div class="r_d">
+        <h2> MINI LEATHER GOODS</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container3">
+    
+    <div class="left_side">
+       <div class="img">
+        <img src="/css_js_files/static_images/ea71bb_a487065a9eda45c6ba662246a7631d23mv2_d_3613_4860_s_4_2.webp" alt="">
+       </div>
+       <div class="details">
+        <p>Ketmart Purse</p>
+        <p><b>$ 299 </b></p>
+       </div>
+       <div class="btn">
+        <a href="">View Details</a>
+       </div>
+    </div>
+
+    <div class="right_side">
+        <div class="img">
+        <img src="/css_js_files/static_images/hendbelt.webp" alt="">
+        </div>
+        <div class="r_d">
+        <h2> LEATHER BELTS</h2>
+        </div>
+    </div>
+    
+</div>
+
+<div class="container4">
+    <div class="con4">
+         <img src="/css_js_files/static_images/p1.webp" alt="">
+         <div class="con4_data">
+            <p>Family Owned</p>
+            <h2>BRAND</h2>
+            <a href="">Read Our Story</a>
+         </div>
+    </div>
+    <div class="con4">
+        <img src="/css_js_files/static_images/p2.webp" alt="">
+        <div class="con4_data">
+            <p>Hand Crafied</p>
+            <h2>PRODUCTS</h2>
+            <a href="">About Our Leather</a>
+         </div>
+    </div>
+    <div class="con4" id="con4">
+        <img src="/css_js_files/static_images/p3.webp" alt="">
+        <div class="con4_data">
+            <p>Created In The</p>
+            <h2>USA</h2>
+            <a href="">Learn Our Process</a>
+         </div>
+    </div>
+</div>
+
+
+{% include './insta_slider.html' %}
+
+
+
+<script>
+var x=document.getElementById('child')
+var y=document.getElementsByClassName('img').length-8
+c=0
+function next(){
+    if(c<y){
+        c=c+1
+        console.log(c)
+        x.style.transform=`translateX(-${c*21}vw)`
+    }
+    else{
+        x.style.transform=`translateX(-${0}vw)`
+        c=0
+    }
+}
+
+function prev(){
+    if(c>0){
+        c=c-1
+        x.style.transform=`translateX(-${c*21}vw)`
+    }
+}
+
+var x11=document.getElementsByClassName('child1')[0]
+var y11=document.getElementsByClassName('img1').length-3
+c=0
+function next1(){
+    if(c<y11){
+        c=c+1
+        x11.style.transform=`translateX(-${c*28}vw)`
+    }
+    else{
+        x11.style.transform=`translateX(-${0}vw)`
+        c=0
+    }
+}
+
+function prev1(){
+    if(c>0){
+        c=c-1
+        x11.style.transform=`translateX(-${c*28}vw)`
+    }
+}
+
+
+var x1=document.getElementsByClassName('child2')[0]
+var y1=document.getElementsByClassName('img2').length-2
+c=0
+function next2(){
+    if(c<y1){
+        c=c+1
+        x1.style.transform=`translateX(-${c*41}vw)`
+    }
+    else{
+        x1.style.transform=`translateX(-${0}vw)`
+        c=0
+    }
+}
+
+function prev2(){
+    if(c>0){
+        c=c-1
+        x1.style.transform=`translateX(-${c*41}vw)`
+    }
+}
+
+
+var x2=document.getElementsByClassName('child3')[0]
+var y2=document.getElementsByClassName('img3').length-1
+c=0
+function next3(){
+    if(c<y2){
+        c=c+1
+        x2.style.transform=`translateX(-${c*61}vw)`
+    }
+    else{
+        x1.style.transform=`translateX(-${0}vw)`
+        c=0
+    }
+}
+
+function prev3(){
+    if(c>0){
+        c=c-1
+        x2.style.transform=`translateX(-${c*61}vw)`
+    }
+}
+
+
+
+var hh=document.getElementById("popup")
+var isPopupDisplayed = false;
+window.addEventListener('scroll',function(){
+    if(window.scrollY>2 && !isPopupDisplayed){
+        hh.style.display = 'block';
+        isPopupDisplayed = true;
+    }
+    setTimeout(function () {
+            hh.style.display = 'none';
+        }, 4000);
+})
+</script>
+
+
+
+
+{% endblock %}

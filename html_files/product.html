@@ -1,0 +1,153 @@
+{% extends './base.html' %}
+
+{% block 'css_files' %}
+<link rel="stylesheet" href="/css_js_files/product.css">
+{% endblock %}
+
+{% block 'content' %}
+<form method="post" action="/cart_page/{{product.id}}"  class="product_con">
+  {% csrf_token %}
+    <div class="ppl">
+     <!-- <div class="img"></div> -->
+     <img src="{{product.images.url}}" alt="">
+    </div>
+    <div class="ppr">
+     <h3>{{product.product_name}}</h3>
+     <p class="price"><b>$ {{product.price}}</b></p>
+     <p class="dis">{{product.description}}</p>
+     <h2>Choose Color</h2>
+     <select name="color" id="">
+        {% for i in colors %}
+        <option value="{{i.VV}}">{{i.VV}}</option>
+        {% endfor %}
+        <!-- <option value="">Blue</option>
+        <option value="">Green</option> -->
+     </select>
+     <h2>Select Size</h2>
+     <select name="size" id="select">
+        {% for i in sizes %}
+        <option value="{{i.VV}}">{{i.VV}}</option>
+        {% endfor %}
+        <!-- <option value="">Xl</option> -->
+        <!-- <option value="">MD</option> -->
+     </select>
+      
+     <br>
+     <a href=""><button class="adc" type="submit">Add to Cart</button></a>
+
+     <!-- ################################### -->
+     <button class="accordion" onclick="plus1()">PRODUCT INFO <i class="fa-solid fa-plus plus showx" id="plus1"></i>
+     <i class="fa-solid fa-minus minus hidex" id="minus1"></i>   
+    </button>
+<div class="panel">
+  <p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p>
+</div>
+
+<button class="accordion" onclick="plus2()">RETURN & REFUND POLICY  
+    <i class="fa-solid fa-plus plus showx" id="plus2"></i>
+    <i class="fa-solid fa-minus minus hidex" id="minus2"></i>
+</button>
+<div class="panel">
+  <p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p>
+</div>
+
+<button class="accordion" onclick="plus3()">SHIPPING INFO 
+    <i class="fa-solid fa-plus plus showx" id="plus3"></i>
+    <i class="fa-solid fa-minus minus hidex" id="minus3"></i>
+</button>
+<div class="panel">
+  <p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p>
+</div>
+     <!-- ################################### -->
+    </div>
+</form>
+
+
+
+
+
+<script>
+
+    
+    document.querySelectorAll('.accordion')
+    .forEach(function(element){
+        
+        element.addEventListener('click',function(e){
+            
+            x= document.querySelector('.active')  
+            if(x)
+            {
+                x.classList.remove('active')
+                x.nextElementSibling.style.maxHeight= 0;
+            }
+            e.target.classList.add('active')
+            console.log(e.target.nextElementSibling.scrollHeight)
+            e.target.nextElementSibling.style.maxHeight= `${e.target.nextElementSibling.scrollHeight}px`;
+        })
+        
+    })
+
+    function plus1(){
+        console.log("gfsdf")
+          var x=document.getElementById("plus1")
+          var y=document.getElementById("minus1")
+          if(x.classList.contains("showx")){
+            x.classList.add("hidex")
+            x.classList.remove("showx")
+            y.classList.add("showx")
+            y.classList.remove("hidex")
+          }
+          else{
+            y.classList.remove("showx")
+            y.classList.add("hidex")
+            x.classList.remove("hidex")
+            x.classList.add("showx")
+          }
+
+    }
+
+    function plus2(){
+        console.log("gfsdf")
+          var x=document.getElementById("plus2")
+          var y=document.getElementById("minus2")
+          if(x.classList.contains("showx")){
+            x.classList.add("hidex")
+            x.classList.remove("showx")
+            y.classList.add("showx")
+            y.classList.remove("hidex")
+          }
+          else{
+            y.classList.remove("showx")
+            y.classList.add("hidex")
+            x.classList.remove("hidex")
+            x.classList.add("showx")
+          }
+    }
+
+    function plus3(){
+        console.log("gfsdf")
+          var x=document.getElementById("plus3")
+          var y=document.getElementById("minus3")
+          if(x.classList.contains("showx")){
+            x.classList.add("hidex")
+            x.classList.remove("showx")
+            y.classList.add("showx")
+            y.classList.remove("hidex")
+          }
+          else{
+            y.classList.remove("showx")
+            y.classList.add("hidex")
+            x.classList.remove("hidex")
+            x.classList.add("showx")
+          }
+    }
+
+
+
+    
+</script>
+
+
+
+{% endblock %}
+

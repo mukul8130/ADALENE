@@ -1,0 +1,67 @@
+.forgot_form{
+    padding: 50px 20px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.forgot_form form{
+    /* background-color: yellow; */
+    padding: 20px 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    width:40%;
+    min-width: 500px;
+    box-shadow: 0px 0px 2px black;
+    border-radius: 5px;
+}
+.forgot_form form label{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.forgot_form form input{
+    padding: 7px;
+    font-size: 17px;
+    border-radius:3px;
+
+}
+.forgot_form form a{
+    text-decoration: none;
+    text-align: right;
+    margin: 10px 0px;
+}
+.forgot_form form button{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size:17px;
+    padding:4px;
+    cursor: pointer;
+    border-radius:3px;
+
+}
+.forgot_form p{
+    margin-top: 20px;
+}
+.forgot_form p a{
+    text-decoration: none;
+}
+#rp1,#rp2{
+    margin:10px 0px;
+}
+
+@media screen and (max-width:600px) {
+    .forgot_form form{
+        width:80%;
+        min-width:auto;
+    }
+}
+@media screen and (max-width:400px) {
+    .forgot_form form label {
+        font-size: 20px;
+    }
+
+}

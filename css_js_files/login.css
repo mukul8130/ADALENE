@@ -1,0 +1,134 @@
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.form{
+    width: 100%;
+    margin:51px 0px; 
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  
+    
+}
+
+.form form{
+    width:35%;
+    min-width:300px;
+    padding:20px;
+    display: flex;
+    gap:15px;
+    flex-direction: column;
+    border-radius: 5px;
+    /* border: 1px solid black; */
+    box-shadow: 0px 0px 2px black;
+}
+.form form h2{
+    font-size:30px;
+}
+.form form .for_pass{
+    text-align: end;
+    font-weight:500;
+}
+.form form input{
+    padding:7px;
+    border-radius:5px;
+    /* border: none; */
+    /* outline: none; */
+    font-size:17px;
+}
+/* .form form input:focus{
+    border:3px solid red !important;
+    outline: none;
+} */
+.form form .btn{
+    display: inline-block;
+
+}
+.form form .btn button{
+    width: 100%;
+    padding:5px 0px;
+    background-color:red;
+    color: white;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size:17px;
+}
+/* .form form .btn button:hover{
+    background-color:red;
+    color: black;
+    border-color:red;
+    outline-color:red;
+    transition: all 0.3s ease-in-out;
+} */
+.form .p{
+    margin-top:10px;
+}
+.form .sign_up{
+    font-weight: 500;
+}
+
+.form form #username_error,#password_error{
+    /* background-color: red; */
+    /* height:25px; */
+    color: red;
+}
+.form form .password{
+    position: relative;
+    width: 100%;
+    background-color: yellow;
+}
+.form form .password input{
+    width: 100%;
+    box-sizing: border-box;
+}
+.form form .password .showeye,.hideeye{
+    position: absolute;
+    right: 10px;
+    top: 11px;
+}
+
+.form form .password .hide1{
+    display: none;
+}
+.form form .password .show1{
+    display: block;
+}
+.form form a{
+    text-decoration: none !important;
+}
+
+
+@media screen and (max-width:500px) {
+    .form form{
+        min-width: auto;
+        width:70%;
+    }
+}
+
+@media screen and (max-width:250px) {
+    /* .form form{
+        width:80%;
+    } */
+    .form form h2{
+        font-size: 20px;
+    }
+    .form form input{
+        font-size: 15px;
+    }
+    .form form .btn button{
+        padding: 3px;
+    }
+    .form form .for_pass{
+        font-size: 14px;
+    }
+    .form .p{
+        font-size: 14px;
+    }
+    .form form #username_error, #password_error{
+        font-size: 13px;
+    }
+    
+}

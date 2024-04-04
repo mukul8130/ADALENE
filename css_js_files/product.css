@@ -1,0 +1,147 @@
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h1{
+    color: red;
+}
+.product_con{
+    display: flex;
+    justify-content:center;
+    padding-top:10px;
+    padding-bottom: 50px;
+    border: 1px solid black;
+    background-color:white;
+
+}
+.product_con .ppl{
+    /* border: 1px solid black; */
+
+    width:40%;
+    padding:20px;
+    text-align: center;
+}
+.product_con .ppl img{
+    width:55%;
+    box-shadow: 0px 0px 1px black;
+    min-width: 250px;
+}
+.product_con .ppr{
+    /* border: 1px solid black; */
+    width:50%;
+    padding:20px;
+    line-height: 1.5;
+    border-left: 1px solid black;
+}
+.product_con .ppr h3{
+    font-size: 22px;
+    font-weight:400;
+}
+.product_con .ppr .price{
+    margin:10px 0px;
+}
+.product_con .ppr h2{
+    margin:5px 0px;
+    font-size:20px;
+}
+.product_con .ppr select{
+    width:120px;
+}
+#select{
+    margin-bottom:20px;
+}
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding:18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .hidex{
+    display: none;
+  }
+  .showx{
+    display: block;
+  }
+
+  .adc{
+    width: 120px;
+    margin-bottom: 20px;
+    padding:5px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+
+@media screen and (max-width:650px) {
+    .product_con{
+        flex-wrap: wrap;
+    }
+    .product_con .ppr {
+        border-left: none;
+        width: 100%;
+        border-top: 1px solid black;
+    }
+    .product_con .ppl {
+        width: 100%;
+    }
+    .product_con .ppl img{
+        width:55%;
+        box-shadow: 0px 0px 1px black;
+        min-width:150px;
+    }
+    .adc{
+        /* width:95px; */
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .product_con{
+        padding-top: 0px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    
+    .product_con .ppr h3{
+        font-size: 17px;
+    }
+    .product_con .ppr .dis{
+        font-size: 14px;
+    }
+    .product_con .ppr h2{
+        font-size: 15px;
+    }
+    .product_con .ppr select {
+        width: 95px;
+    }
+    .adc{
+        /* width:95px; */
+        width: 100%;
+    }
+    .accordion{
+        font-size: 12px;
+    }
+
+}
+

@@ -1,0 +1,515 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+.container{
+    /* background-color: red; */
+    width: 100%;
+    /* position: relative; */
+}
+.container .img_con{
+    /* background-color: yellow; */
+    position: relative;
+   
+    
+}
+.container .img_con .con_data{
+    position: absolute;
+    top:0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    /* left:40%; */
+    text-align: center;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    width: 100%;
+    height: 100%;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+}
+.container .img_con .con_data h2{
+    font-size:55px;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 10px;
+    letter-spacing:5px;
+}
+.container .img_con .con_data a{
+    font-size:20px;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 40px;
+    font-weight: lighter;
+    text-decoration: none;
+}
+.container .img_con .con_data a:hover{
+    background-color: white;
+    color: red;
+    border: 1px solid black;
+    transition: all 0.3s ease-in-out;
+}
+.container .img_con img{
+    width: 100%;
+}
+
+.container1{
+    /* background-color: red; */
+    padding:30px 20px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.container1 h6{
+    font-weight: lighter;
+    font-size:30px;
+    text-align: center;
+    text-decoration:overline 1px black;
+}
+
+/* ######## IMG SLIDER ########## */
+.img_slider{
+    padding:10px 8%;
+    width:100%;
+    box-sizing: border-box;
+    position:relative;
+}
+.img_slider .parent{
+    /* background-color: red; */
+    overflow: hidden;
+    width: 100%;
+}
+.img_slider .parent .child{
+    display: flex;
+    gap:1vw;
+    transition:all 0.3s ease-in-out;
+}
+.img_slider .parent .child .img{
+    color: black !important;
+}
+.img_slider1 .parent .child .img1{
+    color: black !important;
+}
+.img_slider2 .parent .child .img2{
+    color: black !important;
+}
+.img_slider3 .parent .child .img3{
+    color: black !important;
+}
+.img_slider .parent .child .img img{
+    min-width:20vw;
+    width: 100%;
+    border-radius: 20px;
+}
+.img_slider .parent .child .img p{
+    text-align: center;
+    line-height:1.5;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+}
+.img_slider .parent .prev,.next{
+    position: absolute;
+    font-size:50px;
+    top:40%;
+    color:red;
+    cursor: pointer;
+}
+.img_slider .parent .prev{
+    left:40px;
+}
+.img_slider .parent .next{
+    right:40px;
+}
+
+.img_slider1{
+    display: none;
+}
+.img_slider2{
+    display: none;
+}
+.img_slider3{
+    display:none;
+}
+
+/* ########################################## */
+
+.container2{
+    padding: 50px 20px;
+    text-align: center;
+}
+.container2 a{
+    border: 1px solid black;
+    padding: 10px 40px;
+    font-size: 20px;
+    font-weight: lighter;
+    text-decoration: none;
+    color: black;
+}
+.container2 a:hover{
+    color: red;
+    transition: all 0.3s ease-in-out;
+    border:1px solid red;
+}
+
+
+/* ##################################################### */
+
+.container3{
+    display: flex;
+    justify-content:space-evenly;
+    width: 100%;
+    /* background-color: red; */
+    /* padding-bottom: 50px; */
+    padding:0px 20px 20px 20px;
+    box-sizing: border-box;
+}
+
+.container3 .right_side{
+    width:35%;
+    /* border: 1px solid black; */
+    position: relative;
+}
+.container3 .left_side{
+    position: relative;
+    width:31.2%;
+    /* border: 1px solid black; */
+    cursor: pointer;
+}
+.container3 .left_side .img img{
+    width: 100%;
+}
+.container3 .right_side .img img{
+    width: 100%;
+    object-fit: cover;
+}
+.container3 .left_side .details{
+    position: absolute;
+    top:60%;
+    line-height:1.5;
+    margin-top:20px;
+    width: 100%;
+    /* background-color: aqua; */
+    text-align: center;
+    font-size: 20px;
+}
+.container3 .left_side:hover .details{
+    display: none;
+}
+.container3 .left_side .btn{
+    position: absolute;
+    top:60%;
+    margin-top:30px;
+    text-align: center;
+    font-size: 20px;
+    width:100%;
+    display: none;
+}
+.container3 .left_side:hover .btn{
+    display: block;
+}
+.container3 .left_side .btn a{
+    width:40%;
+    padding:10px;
+    font-size: 20px;
+    color:red;
+    border: 1px solid red;
+    display: inline-block;
+    text-align: center;
+    /* border: 1px solid black; */
+}
+.container3 .right_side .r_d{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    /* background-color: aqua; */
+    letter-spacing:4px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding:0px 20px ;
+    box-sizing: border-box;
+}
+.container3 .right_side .r_d:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3),rgba(0,0,0,0.3));
+    color: white;
+}
+
+.container4{
+    display: flex;
+    padding:0px 20px 30px 20px;
+    /* background-color: red; */
+    justify-content: space-evenly;
+}
+.container4 .con4{
+    width:25%;
+    /* background-color: yellow; */
+    position: relative;
+}
+.container4 .con4 img{
+    width: 100%;
+}
+.container4 .con4 .con4_data{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3),rgba(0,0,0,0.3),rgba(0,0,0,0.3));
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height:1.5;
+}
+.container4 .con4 .con4_data p{
+     color:white;
+     font-style: italic;
+     font-weight: lighter;
+     font-size: 20px;
+}
+.container4 .con4 .con4_data h2{
+    color: white;
+    letter-spacing: 2px;
+}
+.container4 .con4 .con4_data a{
+    color: white;
+    text-decoration: 1px underline white;
+    /* margin-top:50px; */
+}
+.container4 .con4 .con4_data:hover a{
+    color: red;
+}
+
+/* ######################################### */
+
+
+@media screen and (max-width:900px) {
+    .container .img_con .con_data h2{
+        font-size: 45px;
+    }
+    .img_slider .parent .prev,.next{
+        top:35%;
+        font-size:40px;
+    }
+    
+}
+
+@media screen and (max-width:850px){
+    
+    
+    .img_slider .parent .prev{
+        left:20px;
+    }
+    .img_slider .parent .next{
+        right:20px;
+    }
+
+    .container3 .right_side{
+        width:41%;
+    }
+    .container3 .left_side{
+        width:36.2%;
+    }
+    .container3 .left_side .btn a{
+        width:40%;
+        padding:10px;
+        font-size:15px;
+    }
+    .container4 .con4 .con4_data h2{
+        font-size:15px;
+    }
+    .container4 .con4{
+        width:30%;
+    }
+}
+
+
+
+@media screen and (max-width:750px) {
+    
+    .img_slider .parent .child .img p{
+        font-size:12px;
+    }
+    
+}
+
+@media screen and (max-width:700px) {
+    .container .img_con .con_data h2{
+        font-size: 35px;
+    }
+    .container .img_con .con_data a{
+        font-size: 15px;
+        padding: 10px 30px;
+    }
+    .container2 a{
+        font-size: 15px;
+        padding: 10px 30px;
+    }
+    .img_slider{
+        display: none;
+    }
+    .img_slider1{
+        display: block;
+    }
+    .img_slider1 .parent .child .img1 img{
+        width: 100%;
+        min-width:27vw;
+        border-radius:20px ;
+    }
+    .img_slider1 .parent .child .img1 p{
+        text-align: center;
+        line-height: 1.5;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    }
+    .container3 .right_side{
+        width:47%;
+    }
+    .container3 .left_side{
+        width:41.2%;
+    }
+    .container3 .right_side .r_d{
+        font-size:10px;
+        background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3),rgba(0,0,0,0.3));
+    color: white;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .container3 .left_side .details {
+        line-height: 1.4;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    
+}
+
+
+
+@media screen and (max-width:550px) {
+    .img_slider1{
+        display: none;
+    }
+    .img_slider2{
+        display:block;
+    }
+    .img_slider2 .parent .child .img2{
+        width: 100%;
+    }
+    .img_slider2 .parent .child .img2 img{
+        width: 100%;
+        min-width:40vw;
+        border-radius:20px ;
+    }
+    .img_slider2 .parent .child .img2 p{
+        text-align: center;
+        line-height: 1.5;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    }
+    .container3 .left_side .btn a{
+        font-size: 13px;
+    }
+    .container4 #con4{
+        display: none;
+    }
+    .container4 .con4{
+        width:45%;
+    }
+    .container3{
+        padding-bottom: 10px;
+    }
+    .container3 .right_side{
+        width:46%;
+    }
+    .container3 .left_side{
+        width:46.2%;
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    .container .img_con .con_data h2{
+        font-size:28px;
+        letter-spacing: 2px;
+    }
+    .container .img_con .con_data a{
+        font-size: 15px;
+        padding:7px 20px;
+    }
+    .container1 h6{
+        font-size: 28px;
+    }
+    
+    .img_slider .parent .next{
+        font-size:30px;
+    }
+    .img_slider .parent .prev{
+        font-size: 30px;
+    }
+    
+    .container3 .left_side .details{
+        display: none;
+    }
+    .container3 .left_side:hover .btn{
+        display: none;
+    }
+    
+}
+
+
+
+@media screen and (max-width:400px) {
+    .img_slider2{
+        display: none;
+    }
+    .img_slider3{
+        display: block;
+    }
+    .img_slider {
+        padding: 10px 20%;
+    }
+    .img_slider3 .parent .child .img3 img{
+        width: 100%;
+        min-width:60vw;
+        border-radius:20px ;
+    }
+    .img_slider3 .parent .child .img3 p{
+        text-align: center;
+        line-height: 1.5;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    }
+    .container3 .right_side h2{
+        font-size: 13px;
+    }
+    .container4 .con4 .con4_data p{
+        font-size: 15px;
+    }
+    .container4 .con4 .con4_data h2{
+        font-size: 13px;
+    }
+    .container4 .con4 .con4_data a{
+        font-size: 12px;
+    } 
+
+}
+
+
+@media screen and (max-width:300px) {
+    .container .img_con .con_data h2{
+        font-size:20px;
+        letter-spacing: 1px;
+    }
+    .container1 h6{
+        font-size: 20px;
+    }
+    .container .img_con .con_data a{
+        font-size: 12px;
+        padding:7px 10px;
+    }
+    .container2 a{
+        font-size: 12px;
+        padding:7px 10px;  
+    }
+    
+    
+}

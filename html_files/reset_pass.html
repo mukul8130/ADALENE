@@ -1,0 +1,20 @@
+{% extends './base.html' %}
+
+{% block 'css_files' %}
+<link rel="stylesheet" href="/css_js_files/forgot.css">
+{% endblock %}
+
+{% block 'content' %}
+<div class="forgot_form">
+    <form action="/resetpass/" method="post">
+        {% csrf_token %}
+        {% include './massage.html' %}
+        <label for="">Reset Password</label>
+        <input type="password" name="P" id="rp1" placeholder="Create Password" >
+        <input type="password" name="CP" id="rp2" placeholder="Conferm Password">
+        <a href="/login">Got Password ? Login</a>
+        <button type="submit">Reset</button>
+    </form>
+    <p>Don't have account ? <a href="/registration">Sign up</a></p>
+</div>
+{% endblock %}
